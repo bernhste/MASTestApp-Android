@@ -1,6 +1,8 @@
 #!/bin/bash
 
-pushd "$(dirname "$0")/.." > /dev/null || exit
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+pushd "$REPO_ROOT" > /dev/null || exit
 
 CLASS_NAMES=("org.owasp.mastestapp.MastgTest" "org.owasp.mastestapp.MastgTestWebView" "org.owasp.mastestapp.MainActivityKt")
 OUTPUT_DIR="output"
